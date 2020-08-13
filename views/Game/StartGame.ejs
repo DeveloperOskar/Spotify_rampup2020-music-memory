@@ -1,0 +1,125 @@
+<audio id="audio-player" controls>
+                  
+    <source src="#" type="audio/mpeg">
+</audio>
+
+<section id="game-end-overlay-trackList" class="container-fluid">
+  <div class="row justify-content-center"  >
+
+      <div class="col-12 text-center ">
+          <h1 class="mt-3">Tracklist</h1>
+      </div>
+
+      <div class="col-12 col-lg-12 d-flex flex-column justify-content-center align-items-center text-center" id="track-list-wrapper">
+
+          <!-- Tracklist after the game is finished is generated here -->
+    </div>
+   
+
+      <div class="col-12 d-flex flex-column  text-center my-4">
+          <a href="Main">New game</a>
+          <a class="mt-3" href="/logout">Logout</a>
+      </div>
+
+  </div>
+
+</section>
+
+<section id="game-end-overlay-container" class="text-center flex-column">
+  <%- include('../includes/spotifyLogoSvg')  %> 
+  <h3 class="mt-2">And the winner is...</h3>
+  <div id="game-end-players-score-wrapper">
+      <!-- The players result and order is displayed here -->
+</div>
+
+  <a class="my-2" href="Main">New game?</a>
+  <a id="end-game-tracklist-link"  href="javascript:void(0);" class="my-1" >Tracklist</a>
+  <a href="/logout" class="mt-5">Logout</a>
+</section>
+
+
+
+<section id="correct-overlay-container" class="text-center">
+  <h1 class="mb-3 mt-3">Correct!</h1>
+      <h3 id="correct-answer-header">#</h3>
+        <div class="one-song-wrapper mt-2">
+          <p>First track:</p>
+        <img id="track-one-img" src="#" alt="A picture of the correct answer">
+          <p class="px-3 my-2" id="track-one-name"></p>
+          <a id="track-one-uri" href="">Open in spotify</a>
+      </div>
+
+      <!-- When the player has a correct answer this section gets displayed -->
+
+      <div class="one-song-wrapper mt-3 mb-3">
+        <p>Second track:</p>
+        <img id="track-two-img" src="#" alt="A picture of the correct answer">
+        <p class="px-3 my-2" id="track-two-name"></p>
+        <a id="track-two-uri" href="">Open in spotify</a>
+      </div>
+      <small class="font-italic">(Dubble click to close)</small>
+</section>
+
+
+<nav id="game-nav" style="background: black;">
+  <a class="smaler-text p-0 py-2 m-0 mr-3 white-text" href="Main">New game</a>
+  <a class="smaler-text p-0 m-0 py-2 mr-4 white-text" href="/logout">Logout</a>
+  <%- include('../includes/spotifyLogoSmalSvg') %> 
+</nav>
+
+<main class="container-fluid">
+  
+
+    <div class="row justify-content-center" >
+
+        <% if(tracks){  %>
+            <% let number =1 %> 
+            <% tracks.forEach(function(track) { %>
+             
+              <!-- This is the part where cards are generated -->
+        
+        <div class="col-4 col-sm-3 col-md-2 col-xl-2 one-card" data-music-url="<%=track.preview_url%>" data-artist-name="<%=track.artists[0].name%>" data-song-img="<%=track.album.images[0].url%>" data-song-name="<%=track.name%>" data-track-uri="<%=track.uri%>">
+
+            <div class="card-header text-center pointer mt-3 py-1 transition" style="background-color: #4CAF50;">
+                <%= number %>
+                <% number++; %>
+              </div>
+
+            <div class="card transition">
+              <div class="card-body d-flex justify-content-center align-items-center px-0 ">
+
+                  <%- include('../includes/audioPlayingSvg') %> 
+
+                  <div class="text-center  justify-content-center align-items-center flex-column card-track-info-wrappper">
+                    <p class="one-track-text"><%=track.artists[0].name%></p>
+                      <img class="one-track-img my-1" src="<%=track.album.images[0].url%>" alt="A picture of the album preview">
+                    <p class="one-track-text px-0 mx-0"><%=track.name%></p>
+                  </div>
+
+                  <%- include('../includes/audioNotPlayingSvg') %> 
+              </div>
+            </div>
+        </div>
+
+          <% }); %>
+        <% }%>
+    </div>
+    <div style="margin-top: 140px;"></div>
+</main>
+
+
+<section id="game-stats-section">
+  <h6  class="pt-2 mb-1 pl-2">Score:</h6>
+  <% if(Players){%> 
+      <% let playerNumber = 1 %> 
+      <% for(i = 0; i <= Players; i++) { %>
+
+        <!-- This is the part where the game generates the players  -->
+        <p style=" width: 100%;" class="smaler-text pl-2 m-0"><%=PlayerNames[i]%>: <span class="player" data-player-id="<%=playerNumber%>">0</span></p>
+        <% playerNumber++; %> 
+        <% }; %>
+      <% } %> 
+
+</section>
+
+

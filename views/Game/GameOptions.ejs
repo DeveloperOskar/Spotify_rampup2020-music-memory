@@ -1,0 +1,70 @@
+
+<main class="container-fluid">
+
+  <div class="row justify-content-center">
+<section class="col-12 col-lg-4">
+  <h1 class="text-center my-3">How to play</h1>
+  <ol>
+    <li>The first click on a card will select the pressed card and play a song from an artist.</li>
+    <li>The second click on a card will stop the currently playing card. </li>
+    <li>The third click will select your second card and play a song from an artist. 
+      If the artist is the same as the first played artist, the player will get a point and keep taking turns until the player has not found a matching pair.</li>
+    <li>The fourth click will stop the currently playing card and change turn to the next player if the last player did not find a matching pair. </li>
+    <li>The player with the most points after all cards have found a matching pair, wins! </li>
+    <li>You can at anytime open a found track in Spotify. All tracks can be found after the game as well.</li>
+  </ol>
+
+</section>
+<p class="text-center col-12 mt-2">Good luck!</p>
+</div>
+
+
+
+
+
+  <div class="row d-flex flex-column align-items-center">
+     <section class="col-12 col-md-8 col-lg-4">
+      <h2 class="mt-4 px-2 text-center">Options</h2>
+     <form action="Start" method="GET" id="start-form">
+      <div class="form-row">
+        
+        <div class="col-12">
+          <label class="mt-4" for="genre">Select a genre</label>
+          <select id="genre" name="genre" class="form-control black-text">
+            <option class="black-text" value="0" selected>Choose...</option>
+            <option class="black-text" value="1"  >Rock</option>
+             <option class="black-text" value="2" >Pop</option>
+             <option class="black-text" value="3" >Hiphop</option>
+          </select>
+          
+        </div>
+        <div class="col-12">
+
+          <label class="mt-4" for="players">Select number of players</label>
+          <select id="players" name="players" class="form-control black-text">
+            <option class="black-text " value="0" selected>Choose...</option>
+            <option class="black-text" value="1"  >2</option>
+             <option class="black-text" value="2" >3</option>
+             <option class="black-text" value="3" >4</option>         
+          </select>
+        </div>
+        
+        <div id="gameoptions-input-wrapper" class="col-12 form-group mt-4">
+          <input disabled class="form-control d-none " name="player" type="text" placeholder="Player 1s name">
+          <input disabled class="form-control mt-2 d-none" name="player" type="text" placeholder="Player 2s name ">
+          <input disabled class="form-control mt-2 d-none" name="player" type="text" placeholder="Player 3s name ">
+          <input disabled class="form-control mt-2 d-none" name="player" type="text" placeholder="Player 4s name ">
+        </div>
+
+        <div class="col-12 text-center my-2">
+          <button id="start-game-btn" hidden type="submit" class="btn btn-success">Start</button>
+        </div>
+        
+      </div>
+    </form>
+       
+    </section>
+    
+    
+  </div>
+</main>

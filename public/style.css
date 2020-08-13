@@ -1,0 +1,265 @@
+*{
+  font-family: 'Work Sans', sans-serif !important;
+  color: white;
+}
+
+html,body{
+min-width: 100%;
+min-height: 100%;
+
+}
+
+body{
+  overflow-x: hidden;
+  position: relative;
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #57595c, #323536);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #595c5f, #3d4042); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.black-text{
+  color:black;
+}
+.white-text{
+  color:white;
+}
+.smaler-text {
+  font-size: 85%;
+}
+.pointer{
+  cursor: pointer;
+}
+.card{
+  min-height: 90px;
+}
+.large-icon{
+  width: 90px;
+  height: 90px;
+}
+ ol li{
+   margin-top: 1rem;
+ }
+
+ .user-picked-card-bg{
+   background-color: #4CAF50;
+ }
+
+
+
+
+.transition{
+  -webkit-transition: all 250ms ease-out;
+  -moz-transition: all 250ms ease-out;
+  -o-transition: all 250ms ease-out;
+  transition: all 250ms ease-out;
+}
+
+.card-selected{
+-webkit-box-shadow: 12px 12px 2px 1px black;
+-moz-box-shadow: 12px 12px 2px 1px black;
+box-shadow:12px 12px 2px 1px black;
+}
+
+.green-text{
+  color: #4CAF50;
+}
+
+.playingSpeaker{
+  display: none;
+}
+
+.muteSpeaker{
+  display: block;
+}
+.tracklist-thumbnail{
+  width: 80px;
+  height: 80px;
+}
+#audio-player{
+  display: none;
+}
+
+#game-nav{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+#game-stats-header{
+  width: 100%;
+  position: fixed;
+  bottom: 60px;
+  z-index: 1;
+  background-color: black;
+}
+
+#game-stats-section{
+  background-color: black;
+  position: fixed;
+  bottom:0;
+  z-index: 12;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-bottom: 5px;
+}
+
+#correct-overlay-container{
+
+  background-color: rgba(0, 0, 0, 0.788);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 120;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y:auto;
+}
+
+#game-end-overlay-container{
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 100%;
+  min-height: 100%;
+  position: fixed;
+  z-index: 1200;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-end-overlay-trackList{
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 100%;
+  z-index: 1200;
+  display: none;
+}
+
+
+.one-song-wrapper{
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.one-song-wrapper img{
+  width: 85px;
+  height: 85px;
+}
+.one-song-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+.one-track-img{
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.one-track-text{
+  padding: 0px;
+  margin: 0px;
+  color: black;
+  font-size: 50%;
+}
+
+.card-body {
+  height: 130px;
+}
+.card-track-info-wrappper{
+  display: none;
+}
+
+.tracklist-one-artist-tracks-wrapper{
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-around;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.671);
+}
+
+/*Generall styles end*/
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  .large-icon{
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {  
+
+  .card{
+    min-height: 230px;
+  }
+  .one-track-text{
+    font-size: 90%;
+  }
+  .one-track-img{
+    width: 80px;
+    height: 80px;
+  }
+
+  .tracklist-thumbnail{
+    width: 120px;
+    height: 120px;
+  }
+
+  .tracklist-one-artist-tracks-wrapper{
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.479);
+    width: 400px;
+  }
+
+  .card-selected{
+    -webkit-box-shadow: 16px 16px 4px 1px black;
+    -moz-box-shadow: 16px 16px 4px 1px black;
+    box-shadow:16px 16px 4px 1px black;
+    }
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+  .large-icon{
+    width: 150px;
+    height: 150px;
+
+  }
+  .one-card{
+    max-width: 200px;
+  }
+  .card{
+    min-height: 230px;
+  }
+  .one-track-text{
+    font-size: 100%;
+  }
+  .one-track-img{
+    width: 110px;
+    height: 110px;
+  }
+
+
+
+}
